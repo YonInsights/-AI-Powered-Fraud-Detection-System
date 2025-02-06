@@ -81,3 +81,4 @@ class
 1     14151
 Name: count, dtype: int64
 2025-02-06 11:21:43,514 - INFO - Fraud cases distribution by hour computed.
+2025-02-06 11:32:34,005 - INFO - Generating transaction-based features...
