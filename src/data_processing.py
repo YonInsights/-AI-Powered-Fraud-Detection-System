@@ -17,10 +17,11 @@ def clean_data(df):
     return df
 
 def convert_datetime(df, columns):
-    """Converts specified columns to datetime format."""
+    """Converts specified columns to datetime format, handling errors."""
     for col in columns:
-        df[col] = pd.to_datetime(df[col])
+        df[col] = pd.to_datetime(df[col], errors='coerce')
     return df
+
 
 def merge_ip_data(transaction_df, ip_df):
     """Merges fraud transaction data with IP geolocation data."""

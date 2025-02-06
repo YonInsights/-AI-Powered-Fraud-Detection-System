@@ -1,2 +1,42 @@
 2025-02-06 11:09:25,047 - INFO - Cleaning data: Handling missing values and duplicates...
 2025-02-06 11:09:38,920 - INFO - Merging IP address data...
+2025-02-06 11:17:31,083 - INFO - Missing values:
+user_id                0
+signup_time            0
+purchase_time          0
+purchase_value         0
+device_id              0
+source                 0
+browser                0
+sex                    0
+age                    0
+ip_address             0
+class                  0
+country           151103
+dtype: int64
+2025-02-06 11:17:31,107 - INFO - Fraud vs Non-Fraud distribution:
+class
+0    136961
+1     14151
+Name: count, dtype: int64
+2025-02-06 11:17:51,257 - INFO - Cleaning data: Handling missing values and duplicates...
+2025-02-06 11:17:53,049 - INFO - Merging IP address data...
+2025-02-06 11:17:59,156 - INFO - Missing values:
+user_id                0
+signup_time            0
+purchase_time          0
+purchase_value         0
+device_id              0
+source                 0
+browser                0
+sex                    0
+age                    0
+ip_address             0
+class                  0
+country           151103
+dtype: int64
+2025-02-06 11:17:59,168 - INFO - Fraud vs Non-Fraud distribution:
+class
+0    136961
+1     14151
+Name: count, dtype: int64
