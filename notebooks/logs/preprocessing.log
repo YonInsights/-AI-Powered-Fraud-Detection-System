@@ -40,3 +40,44 @@ class
 0    136961
 1     14151
 Name: count, dtype: int64
+2025-02-06 11:20:15,511 - INFO - Cleaning data: Handling missing values and duplicates...
+2025-02-06 11:20:16,506 - INFO - Merging IP address data...
+2025-02-06 11:20:22,126 - INFO - Missing values:
+user_id                0
+signup_time            0
+purchase_time          0
+purchase_value         0
+device_id              0
+source                 0
+browser                0
+sex                    0
+age                    0
+ip_address             0
+class                  0
+country           151103
+dtype: int64
+2025-02-06 11:20:22,132 - INFO - Fraud vs Non-Fraud distribution:
+class
+0    136961
+1     14151
+Name: count, dtype: int64
+2025-02-06 11:21:43,417 - INFO - Missing values:
+user_id                0
+signup_time            0
+purchase_time          0
+purchase_value         0
+device_id              0
+source                 0
+browser                0
+sex                    0
+age                    0
+ip_address             0
+class                  0
+country           151103
+dtype: int64
+2025-02-06 11:21:43,422 - INFO - Fraud vs Non-Fraud distribution:
+class
+0    136961
+1     14151
+Name: count, dtype: int64
+2025-02-06 11:21:43,514 - INFO - Fraud cases distribution by hour computed.
