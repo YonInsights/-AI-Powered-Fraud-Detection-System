@@ -26,17 +26,23 @@ def convert_datetime(df, columns):
 def merge_ip_data(transaction_df, ip_df):
     """Merges fraud transaction data with IP geolocation data."""
     logger.info("Merging IP address data...")
-    transaction_df['ip_address'] = transaction_df['ip_address'].astype(int)
-    ip_df['lower_bound_ip_address'] = ip_df['lower_bound_ip_address'].astype(int)
-    ip_df['upper_bound_ip_address'] = ip_df['upper_bound_ip_address'].astype(int)
 
-    # Merge using IP range
+    transaction_df['ip_address'] = transaction_df['ip_address'].astype(float)
+    ip_df['lower_bound_ip_address'] = ip_df['lower_bound_ip_address'].astype(float)
+    ip_df['upper_bound_ip_address'] = ip_df['upper_bound_ip_address'].astype(float)
+
+    # Merge transactions with IP ranges
     merged_df = transaction_df.merge(
         ip_df, how="left",
         left_on="ip_address",
         right_on="lower_bound_ip_address"
     )
+
+    # Fill missing country values with "Unknown"
+    merged_df['country'].fillna("Unknown", inplace=True)
+
     return merged_df.drop(columns=['lower_bound_ip_address', 'upper_bound_ip_address'])
+
 
 if __name__ == "__main__":
     # Load datasets

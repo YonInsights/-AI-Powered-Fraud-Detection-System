@@ -13,18 +13,19 @@ def create_transaction_features(df):
     """Generates transaction frequency and time-based features."""
     logger.info("Generating transaction-based features...")
 
-    # Ensure timestamps are in datetime format
     df['signup_time'] = pd.to_datetime(df['signup_time'], errors='coerce')
     df['purchase_time'] = pd.to_datetime(df['purchase_time'], errors='coerce')
 
-    # Compute transaction frequency per user
+    # Compute transaction count per user correctly
     df['transaction_count'] = df.groupby('user_id')['user_id'].transform('count')
 
-    # Compute time difference in seconds
+    # Fill NaN transaction counts with 1
+    df['transaction_count'].fillna(1, inplace=True)
+
+    # Compute time since signup
     df['time_since_signup'] = (df['purchase_time'] - df['signup_time']).dt.total_seconds()
 
     return df
-
 
 def create_time_features(df):
     """Extracts hour and day features from timestamps."""
